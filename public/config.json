@@ -16,17 +16,23 @@
     "arguments": {
         "execute": {
            "inArguments":[
-				{
-                    "emailAddress": "{{Contact.Attribute.CustomActivity.EmailAddress}}"
-                }									
+            {
+                "phone_number": "{{Contact.Attribute.whatsapp_activity.PhoneNumber}}"
+            },
+            {
+                "name": "{{Contact.Attribute.whatsapp_activity.Name}}"
+            },
+            {
+                "template_id": "{{Contact.Attribute.whatsapp_activity.TemplateId}}"
+            }								
 			],
           "outArguments": [],
-          "url": "https://customactivity-s9pm.onrender.com/journeybuilder/execute",
+          "url": "https://appiyo.karix.solutions/appiyo/callbacks/api/63aad24b78cdd0fb70bc9cb1/panasonic_callback",
            "verb": "POST",
             "body": "",
             "header": "",
             "format": "json",
-            "useJwt": true,
+            "useJwt": false,
             "timeout": 10000
         }
     },
@@ -35,22 +41,22 @@
       "save": {
         "url": "https://customactivity-s9pm.onrender.com/journeybuilder/save",
           "verb": "POST",
-        "useJwt": true
+        "useJwt": false
        },
        "publish": {
         "url": "https://customactivity-s9pm.onrender.com/journeybuilder/publish",
            "verb": "POST",
-        "useJwt": true
+        "useJwt": false
        },
       "stop": {
         "url": "https://customactivity-s9pm.onrender.com/journeybuilder/stop",
            "verb": "POST",
-        "useJwt": true
+        "useJwt": false
       },
       "validate": {
         "url": "https://customactivity-s9pm.onrender.com/journeybuilder/validate",
         "verb": "POST",
-        "useJwt": true
+        "useJwt": false
       }
     },
     "wizardSteps": [
@@ -71,15 +77,22 @@
            "execute": {
                "inArguments": [
                    {
-                       "phoneNumber": {
+                       "phone_number": {
                            "dataType": "Phone",
                            "isNullable": false,
                            "direction": "in"   
                        }
                    },
                    {
-                       "emailAddress": {
-                           "dataType": "Email",
+                       "name": {
+                           "dataType": "Text",
+                           "isNullable": false,
+                           "direction": "in"
+                       }
+                   },
+                   {
+                       "template_id": {
+                           "dataType": "Text",
                            "isNullable": false,
                            "direction": "in"
                        }
