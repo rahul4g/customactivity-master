@@ -33,22 +33,22 @@
     "configurationArguments": {
       "applicationExtensionKey": "2538eccc-ea13-4f09-826a-c66087eb3827",
       "save": {
-        "url": "https://customactivity-s9pm.onrender.com/journeybuilder/save",
+        "url": "https://customactivity-ck3o.onrender.com/journeybuilder/save",
           "verb": "POST",
         "useJwt": true
        },
        "publish": {
-        "url": "https://customactivity-s9pm.onrender.com/journeybuilder/publish",
+        "url": "https://customactivity-ck3o.onrender.com/journeybuilder/publish",
            "verb": "POST",
            "useJwt": false
        },
       "stop": {
-        "url": "https://customactivity-s9pm.onrender.com/journeybuilder/stop",
+        "url": "https://customactivity-ck3o.onrender.com/journeybuilder/stop",
            "verb": "POST",
            "useJwt": false
       },
       "validate": {
-        "url": "https://customactivity-s9pm.onrender.com/journeybuilder/validate",
+        "url": "https://customactivity-ck3o.onrender.com/journeybuilder/validate",
         "verb": "POST",
         "useJwt": false
       }
