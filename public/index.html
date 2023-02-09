@@ -6,8 +6,6 @@
     <title>Custom Journey Builder Activity</title>
 
     <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/postmonger.js"></script>
-    
     <script type="text/javascript" src="js/require.js"></script>
     <script type="text/javascript">
         (function() {
@@ -23,47 +21,43 @@
         })();
     </script>
 
-    
+    <!--Styles-->
     <style type="text/css">
         body {
             padding: 20px;
             margin: 0;
         }
-        .textbox {
-         color: #000;
-         height: 40px !important;
-         padding: 5px;
-         width: 100%;
-         font-size: 15px;
-        border: 1px solid #dadce0;
-             border-radius: 5px;
-        font-family: 'Lato', sans-serif;
-           }
-           .xspaddingnone {
- padding: 0px 10px 30px 10px;
- position: relative;
-}
-.step {
-        display: none;
-      }
+        .step {
+            display: none;
+        }
         #step1 {
-            display: block;
-        }
-        #step11 {
-            display: block;
-        }
-        #step111 {
             display: block;
         }
     </style>
 
 </head>
 <body>
-    <h3>Configuration JSON</h3>
-    
-<textarea id = "configuration"></textarea>
+<div id="step1" class="step">
 
+    Select your SMS message:
+    <select id="select1">
+        <option value="">Select an option</option>
+        <option value="someMessage">Some SMS</option>
+        <option value="anotherMessage">Another SMS</option>
+        <option value="thirdMessage">Third SMS</option>
+        <option value="unknownMessage">Unknown SMS</option>
+    </select>
 
-  </body>
+    <button id="toggleLastStep">Toggle Last Step</button>
+</div>
+<div id="step2" class="step">
+    Here's a second page with some info on it.
+</div>
+<div id="step3" class="step">
+    You chose the message: <div id="message"></div>
+</div>
+<div id="step4" class="step">
+    Hey, here's a fourth step, just for you.  Toggle this on or off from step 1.
+</div>
+</body>
 </html>
-
