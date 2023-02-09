@@ -1,5 +1,4 @@
-define(["postmonger"], function (Postmonger) {
-    "use strict";
+
     var connection = new Postmonger.Session();
 connection.trigger('ready');
 
@@ -12,5 +11,4 @@ connection.on('clickedNext', function()
 {
     var configuration = JSON.parse(document.getElementById('configuration').value);
     connection.trigger('updateActivity', configuration);
-})
-})
+});
