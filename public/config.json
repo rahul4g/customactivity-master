@@ -53,7 +53,9 @@
         "useJwt": false
       }
     },
-    
+    "wizardSteps": [
+      { "label": "Step 1", "key": "step1" }
+   ],
    "userInterfaces": {
       "configModal": {
           "height": 200,
@@ -87,8 +89,16 @@
                         "direction": "in"
                     }
                 }
+               ],
+               "outArguments": [
+                   {
+                       "foundSignupDate": {
+                           "dataType": "Date",
+                           "direction": "out",
+                           "access": "visible"
+                       }
+                   }
                ]
-               
            }
        }
    }
