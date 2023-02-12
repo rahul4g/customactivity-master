@@ -1,14 +1,108 @@
 {
     "workflowApiVersion": "1.1",
     "metaData": {
-      "icon": "images/icon.png",
-"iconSmall": "images/iconSmall.png",
-      "category": "message"
+        "icon": "images/icon.png",
+        "iconSmall": "images/iconSmall.png",
+        "category": "message"
     },
-    "type": "REST",    
-    "userInterfaces": {
-      "configInspector": {
-        "size":"medium"
+    "type": "REST",
+    "lang": {
+        "en-US": {
+            "name": "Panasonic whatsapp",
+          "description": "A Template for a custom Journey Builder activity",
+          "step1Label": "Configure Activity"
+        }
+    },
+    "arguments": {
+        "execute": {
+           "inArguments":[
+            {"phone_number":"{{Contact.Attribute.CustomActivity.PhoneNo}}"},
+            {"name":"{{Contact.Attribute.CustomActivity.Name}}"},
+            {"template_id":"{{Contact.Attribute.CustomActivity.TemplateId}}"}									
+			],
+          "outArguments": [],
+          "url": "https://appiyo.karix.solutions/appiyo/callbacks/api/63aad24b78cdd0fb70bc9cb1/panasonic_callback/journeybuilder/execute",
+           "verb": "POST",
+            "body": "",
+            "header": "",
+            "format": "json",
+            "useJwt": false,
+            "timeout": 10000
+        }
+    },
+    "configurationArguments": {
+      "applicationExtensionKey": "0418eb6b-b950-48f3-b0d7-17d87e3086e0",
+      "save": {
+        "url": "https://appiyo.karix.solutions/appiyo/callbacks/api/63aad24b78cdd0fb70bc9cb1/panasonic_callback/journeybuilder/save",
+          "verb": "POST",
+        "useJwt": true
+       },
+       "publish": {
+        "url": "https://appiyo.karix.solutions/appiyo/callbacks/api/63aad24b78cdd0fb70bc9cb1/panasonic_callback/journeybuilder/publish",
+           "verb": "POST",
+           "useJwt": false
+       },
+      "stop": {
+        "url": "https://appiyo.karix.solutions/appiyo/callbacks/api/63aad24b78cdd0fb70bc9cb1/panasonic_callback/journeybuilder/stop",
+           "verb": "POST",
+           "useJwt": false
+      },
+      "validate": {
+        "url": "https://appiyo.karix.solutions/appiyo/callbacks/api/63aad24b78cdd0fb70bc9cb1/panasonic_callback/journeybuilder/validate",
+        "verb": "POST",
+        "useJwt": false
       }
-    }
-    }
+    },
+    "wizardSteps": [
+      { "label": "Step 1", "key": "step1" },
+      { "label": "Step 2", "key": "step2" },
+      { "label": "Step 3", "key": "step3" },
+      { "label": "Step 4", "key": "step4", "active": false }
+   ],
+   "userInterfaces": {
+      "configModal": {
+          "height": 200,
+          "width": 300,
+          "fullscreen": true
+      }
+   },
+   "schema": {
+       "arguments": {
+           "execute": {
+               "inArguments": [
+                   {
+                       "phone_number": {
+                           "dataType": "Phone",
+                           "isNullable": false,
+                           "direction": "in"   
+                       }
+                   },
+                   {
+                       "name": {
+                           "dataType": "Text",
+                           "isNullable": false,
+                           "direction": "in"
+                       }
+                   },
+
+                   {
+                    "template_id": {
+                        "dataType": "Text",
+                        "isNullable": false,
+                        "direction": "in"
+                    }
+                }
+               ],
+               "outArguments": [
+                   {
+                       "foundSignupDate": {
+                           "dataType": "Date",
+                           "direction": "out",
+                           "access": "visible"
+                       }
+                   }
+               ]
+           }
+       }
+   }
+}
