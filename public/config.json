@@ -17,14 +17,8 @@
         "execute": {
            "inArguments":[
 				{
-                    "phone_number": "{{Contact.Attribute.whatsapp_activity.PhoneNumber}}"
-                },
-                {
-                    "name": "{{Contact.Attribute.whatsapp_activity.Name}}"
-                },	
-                {
-                    "name": "{{Contact.Attribute.whatsapp_activity.Name}}"
-                }							
+                    "emailAddress": "{{Contact.Attribute.CustomActivity.EmailAddress}}"
+                }									
 			],
           "outArguments": [],
           "url": "https://appiyo.karix.solutions/appiyo/callbacks/api/63aad24b78cdd0fb70bc9cb1/panasonic_callback/execute",
