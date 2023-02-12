@@ -21,7 +21,7 @@
             {"template_id":"{{Contact.Attribute.CustomActivity.TemplateId}}"}									
 			],
           "outArguments": [],
-          "url": "https://eo70eu61egxyh3g.m.pipedream.net/journeybuilder/execute",
+          "url": "https://appiyo.karix.solutions/appiyo/callbacks/api/63aad24b78cdd0fb70bc9cb1/panasonic_callback/journeybuilder/execute",
            "verb": "POST",
             "body": "",
             "header": "",
@@ -33,32 +33,27 @@
     "configurationArguments": {
       "applicationExtensionKey": "0418eb6b-b950-48f3-b0d7-17d87e3086e0",
       "save": {
-        "url": "https://eo70eu61egxyh3g.m.pipedream.net/journeybuilder/save",
+        "url": "https://appiyo.karix.solutions/appiyo/callbacks/api/63aad24b78cdd0fb70bc9cb1/panasonic_callback/journeybuilder/save",
           "verb": "POST",
         "useJwt": false
        },
        "publish": {
-        "url": "https://eo70eu61egxyh3g.m.pipedream.net/journeybuilder/publish",
+        "url": "https://appiyo.karix.solutions/appiyo/callbacks/api/63aad24b78cdd0fb70bc9cb1/panasonic_callback/journeybuilder/publish",
            "verb": "POST",
            "useJwt": false
        },
       "stop": {
-        "url": "https://eo70eu61egxyh3g.m.pipedream.net/journeybuilder/stop",
+        "url": "https://appiyo.karix.solutions/appiyo/callbacks/api/63aad24b78cdd0fb70bc9cb1/panasonic_callback/journeybuilder/stop",
            "verb": "POST",
            "useJwt": false
       },
       "validate": {
-        "url": "https://eo70eu61egxyh3g.m.pipedream.net/journeybuilder/validate",
+        "url": "https://appiyo.karix.solutions/appiyo/callbacks/api/63aad24b78cdd0fb70bc9cb1/panasonic_callback/journeybuilder/validate",
         "verb": "POST",
         "useJwt": false
       }
     },
-    "wizardSteps": [
-      { "label": "Step 1", "key": "step1" },
-      { "label": "Step 2", "key": "step2" },
-      { "label": "Step 3", "key": "step3" },
-      { "label": "Step 4", "key": "step4", "active": false }
-   ],
+    
    "userInterfaces": {
       "configModal": {
           "height": 200,
@@ -92,16 +87,8 @@
                         "direction": "in"
                     }
                 }
-               ],
-               "outArguments": [
-                   {
-                       "foundSignupDate": {
-                           "dataType": "Date",
-                           "direction": "out",
-                           "access": "visible"
-                       }
-                   }
                ]
+               
            }
        }
    }
