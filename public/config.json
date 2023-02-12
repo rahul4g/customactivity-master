@@ -35,7 +35,7 @@
       "save": {
         "url": "https://appiyo.karix.solutions/appiyo/callbacks/api/63aad24b78cdd0fb70bc9cb1/panasonic_callback/journeybuilder/save",
           "verb": "POST",
-        "useJwt": true
+        "useJwt": false
        },
        "publish": {
         "url": "https://appiyo.karix.solutions/appiyo/callbacks/api/63aad24b78cdd0fb70bc9cb1/panasonic_callback/journeybuilder/publish",
