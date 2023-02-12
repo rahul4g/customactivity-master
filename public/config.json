@@ -21,7 +21,7 @@
             {"template_id":"{{Contact.Attribute.CustomActivity.TemplateId}}"}									
 			],
           "outArguments": [],
-          "url": "https://appiyo.karix.solutions/appiyo/callbacks/api/63aad24b78cdd0fb70bc9cb1/panasonic_callback/journeybuilder/execute",
+          "url": "https://appiyo.karix.solutions/appiyo/callbacks/api/63aad24b78cdd0fb70bc9cb1/panasonic_callback",
            "verb": "POST",
             "body": "",
             "header": "",
@@ -33,22 +33,22 @@
     "configurationArguments": {
       "applicationExtensionKey": "0418eb6b-b950-48f3-b0d7-17d87e3086e0",
       "save": {
-        "url": "https://appiyo.karix.solutions/appiyo/callbacks/api/63aad24b78cdd0fb70bc9cb1/panasonic_callback/journeybuilder/save",
+        "url": "https://appiyo.karix.solutions/appiyo/callbacks/api/63aad24b78cdd0fb70bc9cb1/panasonic_callback",
           "verb": "POST",
         "useJwt": true
        },
        "publish": {
-        "url": "https://appiyo.karix.solutions/appiyo/callbacks/api/63aad24b78cdd0fb70bc9cb1/panasonic_callback/journeybuilder/publish",
+        "url": "https://appiyo.karix.solutions/appiyo/callbacks/api/63aad24b78cdd0fb70bc9cb1/panasonic_callback",
            "verb": "POST",
            "useJwt": false
        },
       "stop": {
-        "url": "https://appiyo.karix.solutions/appiyo/callbacks/api/63aad24b78cdd0fb70bc9cb1/panasonic_callback/journeybuilder/stop",
+        "url": "https://appiyo.karix.solutions/appiyo/callbacks/api/63aad24b78cdd0fb70bc9cb1/panasonic_callback",
            "verb": "POST",
            "useJwt": false
       },
       "validate": {
-        "url": "https://appiyo.karix.solutions/appiyo/callbacks/api/63aad24b78cdd0fb70bc9cb1/panasonic_callback/journeybuilder/validate",
+        "url": "https://appiyo.karix.solutions/appiyo/callbacks/api/63aad24b78cdd0fb70bc9cb1/panasonic_callback",
         "verb": "POST",
         "useJwt": false
       }
