@@ -89,9 +89,9 @@ define([
         // may be overridden as desired.
         
 
-        payload['arguments'].execute.inArguments = [{"phone_number":"{{Contact.Attribute.Whatsapp_Custom.PhoneNumber}}"},
-        {"name":"{{Contact.Attribute.Whatsapp_Custom.Name}}"},
-        {"template_id":"{{Contact.Attribute.Whatsapp_Custom.TemplateId}}"}];
+        payload['arguments'].execute.inArguments = [{"phone_number":"{{Contact.Attribute.whatsapp_activity.PhoneNumber}}"},
+        {"name":"{{Contact.Attribute.whatsapp_activity.Name}}"},
+        {"template_id":"{{Contact.Attribute.whatsapp_activity.TemplateId}}"}];
 
         payload['metaData'].isConfigured = true;
 
