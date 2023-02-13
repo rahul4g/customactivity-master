@@ -1,14 +1,97 @@
 {
     "workflowApiVersion": "1.1",
     "metaData": {
-      "icon": "images/icon.png",
-"iconSmall": "images/iconSmall.png",
-      "category": "message"
+        "icon": "images/icon.png",
+        "iconSmall": "images/iconSmall.png",
+        "category": "message"
     },
-    "type": "REST",    
-    "userInterfaces": {
-      "configInspector": {
-        "size":"medium"
+    "type": "REST",
+    "lang": {
+        "en-US": {
+            "name": "Panasonic whatsapp",
+          "description": "A Template for a custom Journey Builder activity",
+          "step1Label": "Configure Activity"
+        }
+    },
+    "arguments": {
+        "execute": {
+           "inArguments":[
+            {"phone_number":"{{Contact.Attribute.whatsapp_activity.PhoneNumber}}"},
+            {"name":"{{Contact.Attribute.whatsapp_activity.Name}}"},
+            {"template_id":"{{Contact.Attribute.whatsapp_activity.TemplateId}}"}									
+			],
+          "outArguments": [],
+          "url": "https://eo70eu61egxyh3g.m.pipedream.net/journeybuilder/execute",
+           "verb": "POST",
+            "body": "",
+            "header": "",
+            "format": "json",
+            "useJwt": false,
+            "timeout": 10000
+        }
+    },
+    "configurationArguments": {
+      "applicationExtensionKey": "2538eccc-ea13-4f09-826a-c66087eb3827",
+      "save": {
+        "url": "https://eo70eu61egxyh3g.m.pipedream.net/journeybuilder/save",
+          "verb": "POST",
+        "useJwt": false
+       },
+       "publish": {
+        "url": "https://eo70eu61egxyh3g.m.pipedream.net/journeybuilder/publish",
+           "verb": "POST",
+           "useJwt": false
+       },
+      "stop": {
+        "url": "https://eo70eu61egxyh3g.m.pipedream.net/journeybuilder/stop",
+           "verb": "POST",
+           "useJwt": false
+      },
+      "validate": {
+        "url": "https://eo70eu61egxyh3g.m.pipedream.net/journeybuilder/validate",
+        "verb": "POST",
+        "useJwt": false
       }
-    }
-    }
+    },
+    "wizardSteps": [
+      { "label": "Step 1", "key": "step1" }
+   ],
+   "userInterfaces": {
+      "configModal": {
+          "height": 200,
+          "width": 300,
+          "fullscreen": true
+      }
+   },
+   "schema": {
+       "arguments": {
+           "execute": {
+               "inArguments": [
+                   {
+                       "phone_number": {
+                           "dataType": "Phone",
+                           "isNullable": false,
+                           "direction": "in"   
+                       }
+                   },
+                   {
+                       "name": {
+                           "dataType": "Text",
+                           "isNullable": false,
+                           "direction": "in"
+                       }
+                   },
+
+                   {
+                    "template_id": {
+                        "dataType": "Text",
+                        "isNullable": false,
+                        "direction": "in"
+                    }
+                }
+               ]
+              
+           }
+       }
+   }
+}
