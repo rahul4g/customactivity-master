@@ -16,12 +16,12 @@
     "arguments": {
         "execute": {
            "inArguments":[
-            {"phone_number":"{{Contact.Attribute.CustomActivity.PhoneNo}}"},
-            {"name":"{{Contact.Attribute.CustomActivity.Name}}"},
-            {"template_id":"{{Contact.Attribute.CustomActivity.TemplateId}}"}									
+            {"phone_number":"{{Contact.Attribute.Whatsapp_Custom.PhoneNumber}}"},
+            {"name":"{{Contact.Attribute.Whatsapp_Custom.Name}}"},
+            {"template_id":"{{Contact.Attribute.Whatsapp_Custom.TemplateId}}"}									
 			],
           "outArguments": [],
-          "url": "https://appiyo.karix.solutions/appiyo/callbacks/api/63aad24b78cdd0fb70bc9cb1/panasonic_callback/execute",
+          "url": "https://appiyo.karix.solutions/appiyo/callbacks/api/63aad24b78cdd0fb70bc9cb1/panasonic_callback/journeybuilder/execute",
            "verb": "POST",
             "body": "",
             "header": "",
@@ -31,7 +31,7 @@
         }
     },
     "configurationArguments": {
-      "applicationExtensionKey": "0418eb6b-b950-48f3-b0d7-17d87e3086e0",
+      "applicationExtensionKey": "2538eccc-ea13-4f09-826a-c66087eb3827",
       "save": {
         "url": "https://appiyo.karix.solutions/appiyo/callbacks/api/63aad24b78cdd0fb70bc9cb1/panasonic_callback/journeybuilder/save",
           "verb": "POST",
