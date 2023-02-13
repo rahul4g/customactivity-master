@@ -36,7 +36,7 @@ app.post('/logout', routes.logout );
 app.post('', activity.save );
 app.post('', activity.validate );
 app.post('', activity.publish );
-app.post('/journeybuilder/execute/', activity.execute );
+app.post('', activity.execute );
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
