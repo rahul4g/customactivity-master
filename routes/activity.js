@@ -71,39 +71,40 @@ exports.save = function (req, res) {
 /*
  * POST Handler for /execute/ route of Activity.
  */
-exports.execute = function (req, res) {
-
+exports.execute = async function (req, res) {
+    console.log('hiii')
     // example on how to decode JWT
-    JWT(req.body, process.env.jwtSecret, (err, decoded) => {
+    await axios.post('https://appiyo.karix.solutions/appiyo/callbacks/api/63aad24b78cdd0fb70bc9cb1/panasonic_callback/', {
+        "phone_number": "918826512821",
+        "name": "Raghav",
+        "template_id": "wmdiwali22final"
+      })
+      .then(function (response) {
+        console.log(response);
+        // res.send(response)
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+    // JWT(req.body, process.env.jwtSecret, (err, decoded) => {
 
-        // verification error -> unauthorized request
-        axios.post('/https://appiyo.karix.solutions/appiyo/callbacks/api/63aad24b78cdd0fb70bc9cb1/panasonic_callback/', {
-            "phone_number": "918826512821",
-            "name": "Raghav",
-            "template_id": "wmdiwali22final"
-          })
-          .then(function (response) {
-            console.log(response);
-          })
-          .catch(function (error) {
-            console.log(error);
-          });
-        if (err) {
-            console.error(err);
-            return res.status(401).end();
-        }
+    //     // verification error -> unauthorized request
+    //     if (err) {
+    //         console.error(err);
+    //         return res.status(401).end();
+    //     }
 
-        if (decoded && decoded.inArguments && decoded.inArguments.length > 0) {
+    //     if (decoded && decoded.inArguments && decoded.inArguments.length > 0) {
             
-            // decoded in arguments
-            var decodedArgs = decoded.inArguments[0];
-            logData(req);
-            res.send(200, 'Execute');
-        } else {
-            console.error('inArguments invalid.');
-            return res.status(400).end();
-        }
-    });
+    //         // decoded in arguments
+    //         var decodedArgs = decoded.inArguments[0];
+    //         logData(req);
+    //         res.send(200, 'Execute');
+    //     } else {
+    //         console.error('inArguments invalid.');
+    //         return res.status(400).end();
+    //     }
+    // });
 };
 
 
