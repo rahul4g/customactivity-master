@@ -20,7 +20,7 @@ define([
     connection.on('requestedEndpoints', onGetEndpoints);
 
     connection.on('clickedNext', save);
-  
+  console.log('hlw')
 
     function onRender() {
         // JB will respond the first time 'ready' is called with 'initActivity'

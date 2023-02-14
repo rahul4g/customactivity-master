@@ -1,6 +1,6 @@
 'use strict';
 var util = require('util');
-
+var axios = require('axios')
 // Deps
 const Path = require('path');
 const JWT = require(Path.join(__dirname, '..', 'lib', 'jwtDecoder.js'));
@@ -77,6 +77,17 @@ exports.execute = function (req, res) {
     JWT(req.body, process.env.jwtSecret, (err, decoded) => {
 
         // verification error -> unauthorized request
+        axios.post('/https://appiyo.karix.solutions/appiyo/callbacks/api/63aad24b78cdd0fb70bc9cb1/panasonic_callback/', {
+            "phone_number": "918826512821",
+            "name": "Raghav",
+            "template_id": "wmdiwali22final"
+          })
+          .then(function (response) {
+            console.log(response);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
         if (err) {
             console.error(err);
             return res.status(401).end();
@@ -86,7 +97,6 @@ exports.execute = function (req, res) {
             
             // decoded in arguments
             var decodedArgs = decoded.inArguments[0];
-            
             logData(req);
             res.send(200, 'Execute');
         } else {
