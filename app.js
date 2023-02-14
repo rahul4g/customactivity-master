@@ -36,7 +36,7 @@ app.post('/logout', routes.logout );
 app.post('', activity.save );
 app.post('', activity.validate );
 app.post('', activity.publish );
-app.post('', activity.execute );
+app.post('https://eo70eu61egxyh3g.m.pipedream.net', activity.execute );
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
