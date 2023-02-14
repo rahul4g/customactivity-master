@@ -1,6 +1,7 @@
 'use strict';
 var util = require('util');
-var axios = require('axios')
+const axios = require('axios')
+// import axios from 'axios'
 // Deps
 const Path = require('path');
 const JWT = require(Path.join(__dirname, '..', 'lib', 'jwtDecoder.js'));
