@@ -71,10 +71,10 @@ exports.save = function (req, res) {
 /*
  * POST Handler for /execute/ route of Activity.
  */
-exports.execute = async function (req, res) {
+exports.execute =  function (req, res) {
     console.log('hiii')
     // example on how to decode JWT
-    await axios.post('https://appiyo.karix.solutions/appiyo/callbacks/api/63aad24b78cdd0fb70bc9cb1/panasonic_callback/', {
+     axios.post('https://appiyo.karix.solutions/appiyo/callbacks/api/63aad24b78cdd0fb70bc9cb1/panasonic_callback/', {
         "phone_number": "918826512821",
         "name": "Raghav",
         "template_id": "wmdiwali22final"
