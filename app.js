@@ -11,63 +11,51 @@ const html = `
 <!DOCTYPE html>
 
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
+<head>
+    <meta charset="utf-8">
     <title>Custom Journey Builder Activity</title>
 
-    <script type="application/json" src="js/jquery.min.js"></script>
-    <script type="application/json" src="js/require.js"></script>
-    <script type="application/json" src="js/customActivity.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/require.js"></script>
+    <script type="text/javascript" src="js/postmonger.js"></script>
     <script type="text/javascript">
-      (function () {
-        var config = {
-          baseUrl: "js",
-        };
+        (function() {
+            var config = {
+                baseUrl: "js",
+            };
 
-        var dependencies = ["customActivity"];
+            var dependencies = [
+                "customActivity"
+            ];
 
-        require(config, dependencies);
-      })();
+            require(config, dependencies);
+        })();
     </script>
 
     <!--Styles-->
     <style type="text/css">
-      body {
-        padding: 20px;
-        margin: 0;
-      }
-      .step {
-        display: none;
-      }
-      #step1 {
-        display: block;
-      }
+        body {
+            padding: 20px;
+            margin: 0;
+        }
+        .step {
+            display: none;
+        }
+        #step1 {
+            display: block;
+        }
     </style>
-  </head>
-  <body>
-    <div id="step1" class="step">
-      Select your SMS message:
-      <select id="select1">
-        <option value="">Select an option</option>
-        <option value="someMessage">Some SMS</option>
-        <option value="anotherMessage">Another SMS</option>
-        <option value="thirdMessage">Third SMS</option>
-        <option value="unknownMessage">Unknown SMS</option>
-      </select>
 
-      <button id="toggleLastStep">Toggle Last Step</button>
-    </div>
-    <div id="step2" class="step">
-      Here's a second page with some info on it.
-    </div>
-    <div id="step3" class="step">
-      You chose the message:
-      <div id="message"></div>
-    </div>
-    <div id="step4" class="step">
-      Hey, here's a fourth step, just for you. Toggle this on or off from step
-      1.
-    </div>
+</head>
+<body>
+    <h3>Configuration JSON</h3>
+    
+<input type="text" id="name" placeholder="Name">
+<input type="text" id="phone" placeholder="Phone">
+<input type="text" id="template" placeholder="Template">
+
+
+
   </body>
 </html>
 `
