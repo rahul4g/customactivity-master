@@ -50,10 +50,7 @@ const html = `
 <body>
     <h3>Configuration JSON</h3>
     
-<input type="text" id="name" placeholder="Name">
-<input type="text" id="phone" placeholder="Phone">
-<input type="text" id="template" placeholder="Template">
-
+<textarea id = "configuration"></textarea>
 
 
   </body>
