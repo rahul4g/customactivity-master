@@ -18,7 +18,7 @@
       "salesforce marketing cloud",
       "heroku"
     ],
-    "author": "Devs United",
+    "author": "Raghav",
     "license": "ISC",
     "bugs": {
       "url": "https://github.com/devsutd/journey-builder-activity-template/issues"
@@ -32,6 +32,7 @@
       "express": "^4.15.4",
       "jsonwebtoken": "^8.0.1",
       "request": "^2.81.0",
+      "jquery": "^3.2.1",
       "require": "^2.4.20"
     }
   }
