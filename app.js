@@ -1,43 +1,33 @@
-'use strict';
-// Module Dependencies
-// -------------------
-var express     = require('express');
-var bodyParser  = require('body-parser');
-var errorhandler = require('errorhandler');
-var http        = require('http');
-var path        = require('path');
-var request     = require('request');
-var routes      = require('./routes');
-var activity    = require('./routes/activity');
+const express = require("express");
+const app = express();
+const port = process.env.PORT || 3001;
 
-var app = express();
+app.get("/", (req, res) => res.type('html').send(html));
 
-// Configure Express
-app.set('port', process.env.PORT || 3000);
-app.use(bodyParser.raw({type: 'application/jwt'}));
-//app.use(bodyParser.urlencoded({ extended: true }));
+app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
-//app.use(express.methodOverride());
-//app.use(express.favicon());
 
-app.use(express.static(path.join(__dirname, 'public')));
+const html = `
+<!DOCTYPE html>
 
-// Express in Development Mode
-if ('development' == app.get('env')) {
-  app.use(errorhandler());
-}
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Custom Journey Builder Activity</title>
 
-// HubExchange Routes
-app.get('/', routes.index );
-app.post('/login', routes.login );
-app.post('/logout', routes.logout );
+    <script type="application/json"  src="js/jquery.min.js"></script>
+    <script type="application/json"  src="js/require.js"></script>
+    <script type="application/json"  src = "js/postmonger.js"></script>
+    <script  type="application/json"  src = "js/activity.js"></script>
 
-// Custom Hello World Activity Routes
-app.post('/journeybuilder/save/', activity.save );
-app.post('/journeybuilder/validate/', activity.validate );
-app.post('/journeybuilder/publish/', activity.publish );
-app.post('/journeybuilder/execute/', activity.execute );
+    
+  </head>
+  <body>
+    <h3>Configuration JSON</h3>
+    
+<textarea id = "configuration"></textarea>
 
-http.createServer(app).listen(app.get('port'), function(){
-  console.log('Express server listening on port ' + app.get('port'));
-});
+
+  </body>
+</html>
+`
