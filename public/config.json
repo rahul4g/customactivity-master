@@ -14,30 +14,33 @@
     "arguments": {
       "execute": {
         "inArguments": [
-            {"phone_number":"{{Contact.Attribute.whatsapp_activity.PhoneNumber}}"},
-            {"name":"{{Contact.Attribute.whatsapp_activity.Name}}"},
-            {"template_id":"{{Contact.Attribute.whatsapp_activity.TemplateId}}"}
+          {
+            "emailAddress": "{{InteractionDefaults.Email}}"
+          },
+          {
+            "phoneNumber": "{{Contact.Default.PhoneNumber}}"
+          }
         ],
         "outArguments": [
           {
             "foundSignupDate": ""
           }
         ],
-        "url": "https://appiyo.karix.solutions/appiyo/callbacks/api/63aad24b78cdd0fb70bc9cb1/panasonic_callback/execute"
+        "url": "https://some-endpoint.com/execute"
       }
     },
     "configurationArguments": {
       "save": {
-        "url": "https://appiyo.karix.solutions/appiyo/callbacks/api/63aad24b78cdd0fb70bc9cb1/panasonic_callback/save"
+        "url": "URI/for/your/activity/save"
       },
       "publish": {
-        "url": "https://appiyo.karix.solutions/appiyo/callbacks/api/63aad24b78cdd0fb70bc9cb1/panasonic_callback/publish"
+        "url": "URI/for/your/activity/publish"
       },
       "validate": {
-        "url": "https://appiyo.karix.solutions/appiyo/callbacks/api/63aad24b78cdd0fb70bc9cb1/panasonic_callback/validate"
+        "url": "URI/for/your/activity/validate"
       },
       "stop": {
-        "url": "https://appiyo.karix.solutions/appiyo/callbacks/api/63aad24b78cdd0fb70bc9cb1/panasonic_callback/stop"
+        "url": "URI/for/your/activity/stop"
       }
     },
     "wizardSteps": [
@@ -65,15 +68,8 @@
               }
             },
             {
-              "name": {
-                "dataType": "Text",
-                "isNullable": false,
-                "direction": "in"
-              }
-            },
-            {
-              "template_id": {
-                "dataType": "Text",
+              "emailAddress": {
+                "dataType": "Email",
                 "isNullable": false,
                 "direction": "in"
               }
