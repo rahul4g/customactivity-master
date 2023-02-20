@@ -94,7 +94,7 @@ define([
         {"template_id":"{{Contact.Attribute.whatsapp_activity.TemplateId}}"}];
 
         payload['metaData'].isConfigured = true;
-
+console.log(payload)
         connection.trigger('updateActivity', payload);
     }
 
