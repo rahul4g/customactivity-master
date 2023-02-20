@@ -1,90 +1,97 @@
 {
     "workflowApiVersion": "1.1",
     "metaData": {
-      "icon": "images/sms.png",
-      "category": "message"
+        "icon": "images/icon.png",
+        "iconSmall": "images/iconSmall.png",
+        "category": "message"
     },
     "type": "REST",
     "lang": {
-      "en-US": {
-        "name": "REST Activity (Workflow API v1.1)",
-        "description": "An example REST activity using workflow API v1.1 format."
-      }
+        "en-US": {
+            "name": "Panasonic whatsapp",
+          "description": "A Template for a custom Journey Builder activity",
+          "step1Label": "Configure Activity"
+        }
     },
     "arguments": {
-      "execute": {
-        "inArguments": [
-          {
-            "emailAddress": "{{InteractionDefaults.Email}}"
-          },
-          {
-            "phoneNumber": "{{Contact.Default.PhoneNumber}}"
-          }
-        ],
-        "outArguments": [
-          {
-            "foundSignupDate": ""
-          }
-        ],
-        "url": "https://some-endpoint.com/execute"
-      }
+        "execute": {
+           "inArguments":[
+            {"phone_number":"{{Contact.Attribute.whatsapp_activity.PhoneNumber}}"},
+            {"name":"{{Contact.Attribute.whatsapp_activity.Name}}"},
+            {"template_id":"{{Contact.Attribute.whatsapp_activity.TemplateId}}"}									
+			],
+          "outArguments": [],
+          "url": "https://appiyo.karix.solutions/appiyo/callbacks/api/63aad24b78cdd0fb70bc9cb1/panasonic_callback/journeybuilder/execute",
+           "verb": "POST",
+            "body": "",
+            "header": "",
+            "format": "json",
+            "useJwt": false,
+            "timeout": 10000
+        }
     },
     "configurationArguments": {
+      "applicationExtensionKey": "2538eccc-ea13-4f09-826a-c66087eb3827",
       "save": {
-        "url": "URI/for/your/activity/save"
-      },
-      "publish": {
-        "url": "URI/for/your/activity/publish"
+        "url": "https://appiyo.karix.solutions/appiyo/callbacks/api/63aad24b78cdd0fb70bc9cb1/panasonic_callback/journeybuilder/save",
+          "verb": "POST",
+        "useJwt": false
+       },
+       "publish": {
+        "url": "https://appiyo.karix.solutions/appiyo/callbacks/api/63aad24b78cdd0fb70bc9cb1/panasonic_callback/journeybuilder/publish",
+           "verb": "POST",
+           "useJwt": false
+       },
+      "stop": {
+        "url": "https://appiyo.karix.solutions/appiyo/callbacks/api/63aad24b78cdd0fb70bc9cb1/panasonic_callback/journeybuilder/stop",
+           "verb": "POST",
+           "useJwt": false
       },
       "validate": {
-        "url": "URI/for/your/activity/validate"
-      },
-      "stop": {
-        "url": "URI/for/your/activity/stop"
+        "url": "https://appiyo.karix.solutions/appiyo/callbacks/api/63aad24b78cdd0fb70bc9cb1/panasonic_callback/journeybuilder/validate",
+        "verb": "POST",
+        "useJwt": false
       }
     },
     "wizardSteps": [
-      { "label": "Step 1", "key": "step1" },
-      { "label": "Step 2", "key": "step2" },
-      { "label": "Step 3", "key": "step3" },
-      { "label": "Step 4", "key": "step4", "active": false }
-    ],
-    "userInterfaces": {
+      { "label": "Step 1", "key": "step1" }
+   ],
+   "userInterfaces": {
       "configModal": {
-        "height": 200,
-        "width": 300,
-        "fullscreen": true
+          "height": 200,
+          "width": 300,
+          "fullscreen": true
       }
-    },
-    "schema": {
-      "arguments": {
-        "execute": {
-          "inArguments": [
-            {
-              "phoneNumber": {
-                "dataType": "Phone",
-                "isNullable": false,
-                "direction": "in"
-              }
-            },
-            {
-              "emailAddress": {
-                "dataType": "Email",
-                "isNullable": false,
-                "direction": "in"
-              }
-            }
-          ],
-          "outArguments": [
-            {
-              "foundSignupDate": {
-                "dataType": "Date",
-                "direction": "out",
-                "access": "visible"
-              }
-            }
-          ]
-        }
-      }
-    }
-  }
+   },
+   "schema": {
+       "arguments": {
+           "execute": {
+               "inArguments": [
+                   {
+                       "phone_number": {
+                           "dataType": "Phone",
+                           "isNullable": false,
+                           "direction": "in"   
+                       }
+                   },
+                   {
+                       "name": {
+                           "dataType": "Text",
+                           "isNullable": false,
+                           "direction": "in"
+                       }
+                   },
+
+                   {
+                    "template_id": {
+                        "dataType": "Text",
+                        "isNullable": false,
+                        "direction": "in"
+                    }
+                }
+               ]
+              
+           }
+       }
+   }
+}
