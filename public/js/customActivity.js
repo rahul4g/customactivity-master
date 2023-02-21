@@ -7,6 +7,7 @@ define([
 
     var connection = new Postmonger.Session();
     connection.trigger('ready');
+    console.log(connection)
 
     connection.on('initActivity', function (data)
     {
@@ -17,6 +18,8 @@ define([
     {
         var configuration = JSON.parse(document.getElementById('configuration').value);
         connection.trigger('updateActivity', configuration);
+        console.log(configuration)
     })
+    
 });
 
