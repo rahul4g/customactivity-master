@@ -82,30 +82,33 @@ exports.execute =  function (req, res) {
       })
       .then(function (response) {
         console.log(response);
+        res.send(200, 'Execute');
         // res.send(response)
       })
       .catch(function (error) {
         console.log(error);
       });
-    // JWT(req.body, process.env.jwtSecret, (err, decoded) => {
 
-    //     // verification error -> unauthorized request
-    //     if (err) {
-    //         console.error(err);
-    //         return res.status(401).end();
-    //     }
+      //logData(req);
+    /*JWT(req.body, process.env.jwtSecret, (err, decoded) => {
 
-    //     if (decoded && decoded.inArguments && decoded.inArguments.length > 0) {
+        // verification error -> unauthorized request
+        if (err) {
+            console.error(err);
+            return res.status(401).end();
+        }
+
+        if (decoded && decoded.inArguments && decoded.inArguments.length > 0) {
             
-    //         // decoded in arguments
-    //         var decodedArgs = decoded.inArguments[0];
-    //         logData(req);
-    //         res.send(200, 'Execute');
-    //     } else {
-    //         console.error('inArguments invalid.');
-    //         return res.status(400).end();
-    //     }
-    // });
+            // decoded in arguments
+            var decodedArgs = decoded.inArguments[0];
+            logData(req);
+            res.send(200, 'Execute');
+        } else {
+            console.error('inArguments invalid.');
+            return res.status(400).end();
+        }
+    });*/
 };
 
 
